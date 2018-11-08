@@ -7,16 +7,31 @@ import com.amazonaws.services.dynamodbv2.document.utils.ValueMap;
 
 import java.util.*;
 
+/**
+ * Persist Cache Manager
+ *
+ */
 public class PersistCacheManager {
 
 	private AmazonDynamoDB amazonDynamoDB;
 	private String dynamoDBKey;
 
+	/**
+	 * PersistCacheManager constructor
+	 * @param amazonDynamoDB
+	 * @param key
+	 */
 	public PersistCacheManager(AmazonDynamoDB amazonDynamoDB, final String key){
 		this.amazonDynamoDB = amazonDynamoDB;
 		this.dynamoDBKey = key;
 	}
 
+	/**
+	 * Get Items for Key
+	 * @param tableName
+	 * @param keyValue
+	 * @return List of Item json string
+	 */
 	public List<String> getItemsForKey(final String tableName, final String keyValue) {
 		List<String> events = new ArrayList<>();
 		DynamoDB dynamoDB = new DynamoDB(amazonDynamoDB);
@@ -34,6 +49,11 @@ public class PersistCacheManager {
 		return events;
 	}
 
+	/**
+	 * Insert Items into the table given
+	 * @param tableName
+	 * @param items
+	 */
 	public void insertItems(final String tableName, final Collection<Item> items){
 		DynamoDB dynamoDB = new DynamoDB(amazonDynamoDB);
 		Table table = dynamoDB.getTable(tableName);

@@ -10,6 +10,12 @@ import org.yajac.aws.lambda.model.GatewayResponse;
  */
 public class LambdaHandler implements RequestHandler<GatewayRequest, GatewayResponse> {
 
+    /**
+     * Handle Request for Lambda
+     * @param input
+     * @param context
+     * @return GatewayResponse response
+     */
     public GatewayResponse handleRequest(final GatewayRequest input, final Context context) {
         GatewayResponse response;
         try {
