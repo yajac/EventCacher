@@ -17,7 +17,7 @@ public class EventCacheHandlerTest extends BaseTestClass{
         Assert.assertNotNull(response);
         String body = response.getBody();
         Assert.assertNotNull(body);
-        Assert.assertEquals(body, EventCacheHandler.body);
+        Assert.assertEquals(body, "{'Response': 'OK'}");
     }
 
 }

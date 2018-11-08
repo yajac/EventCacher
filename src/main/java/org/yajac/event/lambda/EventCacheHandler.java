@@ -7,7 +7,7 @@ import org.yajac.aws.lambda.model.GatewayResponse;
 
 public class EventCacheHandler extends LambdaHandler implements RequestHandler<GatewayRequest, GatewayResponse> {
 
-    protected final static String body = "{\"'Response': \"OK\"}";
+    protected final String body = "{'Response': 'OK'}";
 
     protected String getBody(GatewayRequest request) {
         return body;

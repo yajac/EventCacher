@@ -8,7 +8,7 @@ Parameters:
     Type: String
     Description: AWS CodeStar projectID used to associate new resources to team members
 Resources:
-  CacheSubTopic:
+  CacheEvent:
     Type: AWS::Serverless::Function
     Properties:
       Handler: org.yajac.event.lambda.EventCacheHandler
